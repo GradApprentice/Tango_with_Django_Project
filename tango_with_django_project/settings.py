@@ -107,6 +107,16 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Password hashing
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -126,8 +136,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # Media files
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+
+# Login files
+LOGIN_URL = 'rango:login'
 
